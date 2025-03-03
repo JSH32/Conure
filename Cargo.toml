@@ -1,0 +1,13 @@
+[workspace]
+members = ["conure_client", "conure_server"]
+resolver = "2"
+
+[workspace.dependencies]
+# Protocol
+capnpc = "0.20.1"
+capnp = "0.20.4"
+capnp-rpc = "0.20.3"
+
+# Logging
+env_logger = "0.11.6"
+log = "0.4.26"
