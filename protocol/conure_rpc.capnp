@@ -27,13 +27,23 @@ interface ShellSession {
   terminate @2 () -> ();
 }
 
+# Initial service that returns the ServerRPC to communicate with the client.
+interface Gateway {
+  struct ConnectionParameters {
+    client @0 :ClientRpc;
+    token  @1 :Text;
+  }
+
+  registerClient @0 (params :ConnectionParameters) -> (rpc: ServerRpc);
+}
+
 # Server RPC, interacted with by client.
-interface ServerService {
+interface ServerRpc {
   reportSystemInfo @0 (info :SystemInfo) -> ();
 }
 
 # Client RPC, interacted with by server.
-interface ClientService {
+interface ClientRpc {
   # Asyncronously request a reportSystemInfo call.
   requestSystemInfo @0 () -> ();
 

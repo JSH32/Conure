@@ -1,0 +1,18 @@
+[package]
+name = "conure_common"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+chrono = "0.4.40"
+chrono-tz = "0.10.1"
+sysinfo = "0.33.1"
+capnp = { workspace = true }
+capnp-rpc = { workspace = true }
+env_logger = { workspace = true }
+async-trait = { workspace = true }
+
+[build-dependencies]
+capnpc = { workspace = true }
+walkdir = { workspace = true }
+fs_extra = { workspace = true }

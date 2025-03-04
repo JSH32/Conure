@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Switch to Windows target",
+            "type": "shell",
+            "command": "echo '{\"rust-analyzer.cargo.target\": \"x86_64-pc-windows-gnu\"}' > .vscode/settings.json",
+            "problemMatcher": []
+        },
+        {
+            "label": "Switch to Linux target",
+            "type": "shell",
+            "command": "echo '{\"rust-analyzer.cargo.target\": null}' > .vscode/settings.json",
+            "problemMatcher": []
+        },
+        {
+            "label": "Switch to macOS target",
+            "type": "shell",
+            "command": "echo '{\"rust-analyzer.cargo.target\": \"x86_64-apple-darwin\"}' > .vscode/settings.json",
+            "problemMatcher": []
+        }
+    ]
+}

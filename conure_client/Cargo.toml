@@ -4,9 +4,33 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-capnp = { workspace = true }
+conure_common = { workspace = true }
 env_logger = { workspace = true }
 log = { workspace = true }
+sysinfo = "0.33.1"
+iana-time-zone = "0.1.61"
+thiserror = { workspace = true }
+whoami = "1.5.2"
+# async
+tokio = { workspace = true }
+tokio-util = { workspace = true }
+futures-util = { workspace = true }
+futures = { workspace = true }
+# capnp
+capnp = { workspace = true }
+capnp-rpc = { workspace = true }
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = ["securitybaseapi", "winbase", "winnt"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+security-framework = "3.2.0"
+
+[dev-dependencies]
+# For development
+winapi = { version = "0.3", features = ["securitybaseapi", "winbase", "winnt"] }
 
 [build-dependencies]
 capnpc = { workspace = true }
+walkdir = { workspace = true }
+fs_extra = { workspace = true }

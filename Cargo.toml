@@ -1,5 +1,5 @@
 [workspace]
-members = ["conure_client", "conure_server"]
+members = ["conure_client", "conure_common", "conure_server"]
 resolver = "2"
 
 [workspace.dependencies]
@@ -7,7 +7,21 @@ resolver = "2"
 capnpc = "0.20.1"
 capnp = "0.20.4"
 capnp-rpc = "0.20.3"
+futures-util = "0.3.31"
+derive-new = "0.7.0"
+futures = "0.3.31"
+thiserror = "2.0.12"
+tokio-util = { version = "0.7.13", features = ["compat"] }
+tokio = { version = "1.43.0", features = ["full"] }
+conure_common = { path = "./conure_common" }
 
 # Logging
 env_logger = "0.11.6"
 log = "0.4.26"
+
+# Build scripts
+walkdir = "2.3"
+fs_extra = "1.2"
+
+# Utils
+async-trait = "0.1.87"
