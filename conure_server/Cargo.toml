@@ -20,6 +20,11 @@ futures = { workspace = true }
 # capnp
 capnp = { workspace = true }
 capnp-rpc = { workspace = true }
+# ui
+dioxus = { version = "0.6.2" }
+dioxus-liveview = { version = "0.6.2", features = ["axum"] }
+axum = { version = "0.7.0", features = ["ws"] }
+dioxus-router = "0.6.2"
 
 [build-dependencies]
 capnpc = { workspace = true }
